@@ -1,0 +1,8 @@
+[package]
+name = "company-org"
+version = "0.1.0"
+authors = ["shenglin-alex <a182820998@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rustc-serialize = "0.3"
