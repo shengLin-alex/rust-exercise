@@ -1,32 +1,19 @@
-mod shapes;
+pub mod shapes;
 
-#[cfg(test)]
-mod tests {
+pub struct Guess {
+    value: u32,
+}
 
-    use super::shapes::Rectangle;
+impl Guess {
+    pub fn new(value: u32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("boom! {}", value);
+        }
 
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+        Guess { value }
     }
 
-    #[test]
-    fn it_panic() {
-        // panic!("fuck you");
-    }
-
-    #[test]
-    fn larger_can_hold_smaller() {
-        let a = Rectangle {
-            length: 10,
-            width: 43
-        };
-
-        let b = Rectangle {
-            length: 3,
-            width: 3
-        };
-
-        assert!(a.can_hold(&b));
+    fn private_function() -> i32 {
+        3
     }
 }
